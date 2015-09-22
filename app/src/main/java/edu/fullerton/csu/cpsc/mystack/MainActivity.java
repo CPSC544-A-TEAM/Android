@@ -30,19 +30,46 @@ public class MainActivity extends ActionBarActivity {
         pushButton.requestFocus();
 
 
+        pushButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    String input = inputText.getText().toString();
+                    if (input.length() ==0){
+                        Toast.makeText(getApplicationContext(), "Please enter an integer",
+                                Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (Integer.parseInt(input) >9 || Integer.parseInt(input) <0){
+                        Toast.makeText(getApplicationContext(), "Please enter a valid integer (0-9)",
+                                Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (stack.size()>=3){
+                        Toast.makeText(getApplicationContext(), "Stack full, pop it off first",
+                                Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    stack.push(input);
+                    printStack();
+                }catch (Exception e){
+                    Log.d("Stack error", e.toString());
+                }
+            }
+        });
 
 
-    public void printStack(){
 
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        return super.onOptionsItemSelected(item);
-    }
 }
