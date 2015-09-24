@@ -47,7 +47,7 @@
         android:inputType="textMultiLine"
         android:ems="100"
         android:id="@+id/messages"
-        android:text="Stack currently empty"
+        android:text="Current Stack:empty"
         android:lines="9"
         android:gravity="top"
         android:layout_below="@+id/popButton"

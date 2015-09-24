@@ -95,7 +95,7 @@ public class MainActivity extends ActionBarActivity {
 
             implodeString += element + "  ";
         }
-        messagesText.setText("Stack:" + implodeString + "\n" +  messagesText.getText());
+        messagesText.setText("Current Stack:" + implodeString + "\n" +  messagesText.getText());
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -117,5 +117,9 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
     }
 }
