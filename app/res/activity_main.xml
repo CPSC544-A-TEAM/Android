@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:id="@+id/layout">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pop"
+        android:layout_below="@+id/editText"
+        android:id="@+id/popButton"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        />
+    <requestFocus />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Push"
+        android:id="@+id/pushButton"
+        android:layout_below="@+id/editText"
+         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:id="@+id/exitButton"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:hint="Please input an integer"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="100"
+        android:id="@+id/messages"
+        android:text="Stack currently empty"
+        android:lines="9"
+        android:gravity="top"
+        android:layout_below="@+id/popButton"
+        android:layout_alignEnd="@+id/button3" />
+
+</RelativeLayout>
